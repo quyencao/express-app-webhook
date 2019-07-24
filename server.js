@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.json({ message: 'Success Change!!!' })
+    res.json({ message: 'Success Change!!' })
 });
 
 app.post("/webhooks/github", function (req, res) {

@@ -5,15 +5,15 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.json({ message: 'Success' })
+    res.json({ message: 'Success Change' })
 });
 
 app.post("/webhooks/github", function (req, res) {
-    var branch = req.body.ref;
+    // var branch = req.body.ref;
 
-    if(branch.indexOf('master') > -1){
+    // if(branch.indexOf('master') > -1){
         deploy(res);
-    }
+    // }
 })
   
 function deploy(res){
@@ -22,7 +22,7 @@ function deploy(res){
             console.error(err);
             return res.json(500);
         }
-        res.json(200);
+        res.json({ message: 200 });
     });
 }
 
